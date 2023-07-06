@@ -1,0 +1,1 @@
+sss<?php /**PATH E:\shayegan_project\shop\resources\views/front/website/index.blade.php ENDPATH**/ ?>
