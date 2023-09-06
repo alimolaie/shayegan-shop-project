@@ -7,6 +7,21 @@ Route::get('/admin/login',function ()
 {
     return view('admin');
 });
+Route::get('/users/login',function ()
+{
+    return view('front.website.login');
+});
+Route::get('/users/login/test',function ()
+{
+    return view('front.website.login-test');
+});
+Route::get('/users/login/confirm-code',function ()
+{
+    return view('front.website.confirm_code_otp');
+});
+Route::post('/login-member-test','MemberController@testLogin');
+Route::post('/confirm-code','MemberController@sendOpt');
+Route::get('/product/{id}','FrontCntroller@productDetails');
 //Roles
 Route::group(['middleware' => ['admin']], function() {
     Route::resource('gwc/roles','RoleController');
@@ -405,7 +420,8 @@ Route::group(['middleware' => ['admin']], function() {
 	Route::post('/gwc/saveEmail', 'AdminSettingsController@saveEmail')->name('saveEmail');
 	Route::get('/gwc/notifyemails/delete/{id}','AdminSettingsController@destroyEmails');
 	Route::get('/gwc/notifyemails/ajax/{id}','AdminSettingsController@updateStatusAjax');
-	
+	Route::resource('/admin/intro','IntroController');
+
     //////////////////////////////////////////////////WEBSITE//////////////////////////////////////////////////
     Route::get('locale/{locale}',function($locale){
     Session::put('locale', $locale);
@@ -843,3 +859,6 @@ Route::group(['middleware' => ['admin']], function() {
   }]);
 
 Route::get('test-product','ProductTestController@index');
+
+//members routes
+Route::get('users/my-account','MemberController@memberDashboard');

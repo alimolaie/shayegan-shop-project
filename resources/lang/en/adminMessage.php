@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'websiteName'           => 'GULFWEB ADMIN PANEL',
+    'websiteName'           => 'پنل مدیریت',
 	'websiteFooter'         => date('Y').' &copy; &nbsp;<a href="http://gulfclick.net/" target="_blank" class="kt-link">Gulfweb</a>',
 	'dashboard'             => 'Dashboard',
 	'exportascsv'           => 'Export as CSV',

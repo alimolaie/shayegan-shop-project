@@ -123,6 +123,8 @@ class AdminBannerController extends Controller
         $banner->btype=$request->input('btype');
 		$banner->title_en=$request->input('title_en');
 		$banner->title_ar=$request->input('title_ar');
+        $banner->details_en=$request->input('details_en');
+        $banner->details_ar=$request->input('details_ar');
 		$banner->link_id=$request->input('link_id');
 		$banner->link_type=$request->input('link_type');
 		$banner->link=$request->input('link');
@@ -273,6 +275,8 @@ class AdminBannerController extends Controller
 		$banner->btype=$request->input('btype');
 		$banner->title_en=$request->input('title_en');
 		$banner->title_ar=$request->input('title_ar');
+        $banner->details_en=$request->input('details_en');
+        $banner->details_ar=$request->input('details_ar');
 		$banner->link_id=$request->input('link_id');
 		$banner->link_type=$request->input('link_type');
 		$banner->link=$request->input('link');

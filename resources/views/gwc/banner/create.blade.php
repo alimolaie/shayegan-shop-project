@@ -175,8 +175,17 @@ $theme    = $settings->theme;
                                             </div>  
                                             @endif 
 											</div>
-                                            
-                     
+
+												<div class="form-group row">
+													<div class="col-lg-6">
+														<label>{{__('adminMessage.details_en')}}</label>
+														<textarea   rows="3" id="details_en" name="details_en" class="tinymce-editor form-control" autocomplete="off" placeholder="{{__('adminMessage.enter_details_en')}}">{{old('details_en')}}</textarea>
+													</div>
+													<div class="col-lg-6">
+														<label>{{__('adminMessage.details_ar')}}</label>
+														<textarea   rows="2" id="details_ar" name="details_ar" class="tinymce-editor form-control" autocomplete="off" placeholder="{{__('adminMessage.enter_details_ar')}}">{{old('details_ar')}}</textarea>
+													</div>
+												</div>
                                          <div class="form-group row">
                                                 <div class="col-lg-6">
                                                         <label>
@@ -264,8 +273,25 @@ $theme    = $settings->theme;
 	
 		<!-- js files -->
 		@include('gwc.js.user')
-        
-       
+
+		<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+		<script type="text/javascript">
+			tinymce.init({
+				selector: 'textarea.tinymce-editor',
+				height: 300,
+				menubar: false,
+				plugins: [
+					'advlist autolink lists link image charmap print preview anchor',
+					'searchreplace visualblocks code fullscreen',
+					'insertdatetime media table paste code help wordcount', 'image'
+				],
+				toolbar: 'undo redo | formatselect | ' +
+						'bold italic backcolor | alignleft aligncenter ' +
+						'alignright alignjustify | bullist numlist outdent indent | ' +
+						'removeformat | help',
+				content_css: '//www.tiny.cloud/css/codepen.min.css'
+			});
+		</script>
 	</body>
 
 	<!-- end::Body -->

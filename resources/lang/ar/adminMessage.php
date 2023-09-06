@@ -13,8 +13,8 @@ return [
     |
     */
 
-    'websiteName'           => 'GULFWEB ADMIN PANEL',
-	'websiteFooter'         => date('Y').' &copy; &nbsp;<a href="http://gulfclick.net/" target="_blank" class="kt-link">Gulfweb</a>',
+    'websiteName'           => 'ADMIN PANEL',
+	'websiteFooter'         => date('Y').' &copy; &nbsp;<a href="/" target="_blank" class="kt-link">فروشگاه شایگان</a>',
 	'dashboard'             => 'Dashboard',
 	'exportascsv'           => 'Export as CSV',
 	'exportaspdf'           => 'Export as PDF',

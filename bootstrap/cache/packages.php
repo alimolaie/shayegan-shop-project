@@ -57,6 +57,17 @@
       'Excel' => 'Maatwebsite\\Excel\\Facades\\Excel',
     ),
   ),
+  'melipayamak/laravel' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Melipayamak\\Laravel\\ServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Melipayamak' => 'Melipayamak\\Laravel\\Facade',
+    ),
+  ),
   'nesbot/carbon' => 
   array (
     'providers' => 

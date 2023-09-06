@@ -176,8 +176,18 @@ $theme    = $settings->theme;
                                             </div>  
                                             @endif 
 											</div>
-                                       
-                                         <!-- friendly url , status , sorting -->   
+												<div class="form-group row">
+													<div class="col-lg-6">
+														<label>{{__('adminMessage.details_en')}}</label>
+														<textarea   rows="3" id="details_en" name="details_en" class="tinymce-editor form-control" autocomplete="off" placeholder="{{__('adminMessage.enter_details_en')}}">{{$editbanner->details_en}}</textarea>
+													</div>
+													<div class="col-lg-6">
+														<label>{{__('adminMessage.details_ar')}}</label>
+														<textarea   rows="2" id="details_ar" name="details_ar" class="tinymce-editor form-control" autocomplete="off" placeholder="{{__('adminMessage.enter_details_ar')}}">{{$editbanner->details_ar}}</textarea>
+													</div>
+												</div>
+
+												<!-- friendly url , status , sorting -->
                                          <div class="form-group row">
                                                 
                                                 <div class="col-lg-4">
