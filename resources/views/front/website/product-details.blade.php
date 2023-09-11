@@ -165,23 +165,26 @@ $gallarys=\Illuminate\Support\Facades\DB::table('gwc_products_gallery')->where('
                                     <div class="product-variation-price">
                                         <span></span>
                                     </div>
-
-                                    <div class="fix-bottom product-sticky-content sticky-content">
-                                        <div class="product-form container">
-                                            <div class="product-qty-form">
-                                                <div class="input-group">
-                                                    <input class="quantity form-control" type="number" min="1"
-                                                           max="10000000">
-                                                    <button class="quantity-plus w-icon-plus"></button>
-                                                    <button class="quantity-minus w-icon-minus"></button>
+                                    <form action="{{url('users/add-to-cart/'.$product->id)}}" method="post">
+                                        @csrf
+                                        <div class="fix-bottom product-sticky-content sticky-content">
+                                            <div class="product-form container">
+                                                <div class="product-qty-form">
+                                                    <div class="input-group">
+                                                        <input class="quantity form-control" name="qty" type="number" min="1" value="1"
+                                                               max="10000000">
+                                                        <button class="quantity-plus w-icon-plus"></button>
+                                                        <button class="quantity-minus w-icon-minus"></button>
+                                                    </div>
                                                 </div>
+                                                <button class="btn btn-primary btn-cart" type="submit">
+                                                    <i class="w-icon-cart"></i>
+                                                    <span>افزودن به سبد  </span>
+                                                </button>
                                             </div>
-                                            <button class="btn btn-primary btn-cart">
-                                                <i class="w-icon-cart"></i>
-                                                <span>افزودن به سبد  </span>
-                                            </button>
                                         </div>
-                                    </div>
+
+                                    </form>
 
                                     <div class="social-links-wrapper">
                                         <div class="social-links">

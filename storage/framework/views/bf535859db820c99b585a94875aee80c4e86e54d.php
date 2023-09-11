@@ -115,8 +115,8 @@ $theme    = $settings->theme;
 													</div>
                                                    </div>
                                                 </div>
-                                                
-                                                
+
+
                                             <div class="form-group">
                                                 <div class="input-group row">
 												 <label class="col-10"><?php echo e(__('adminMessage.is_show_tags')); ?> <a href="javascript:;" data-toggle="kt-popover" data-trigger="focus" title="<?php echo e(__('adminMessage.note')); ?>" data-html="true" data-content="<?php echo e(__('adminMessage.is_show_tags_note')); ?>"><?php echo trans('svgicon.help'); ?></a></label>
@@ -140,8 +140,8 @@ $theme    = $settings->theme;
 													</div>
                                                    </div>
                                                 </div>
-                                                
-                                                
+
+
                                             <div class="form-group">
                                                 <div class="input-group row">
 												 <label class="col-10"><?php echo e(__('adminMessage.is_more_menu')); ?> <a href="javascript:;" data-toggle="kt-popover" data-trigger="focus" title="<?php echo e(__('adminMessage.note')); ?>" data-html="true" data-content="<?php echo e(__('adminMessage.is_more_menu_note')); ?>"><?php echo trans('svgicon.help'); ?></a></label>
@@ -153,7 +153,7 @@ $theme    = $settings->theme;
 													</div>
                                                    </div>
                                                 </div>
-                                                
+
                                              <div class="form-group">
                                                 <div class="input-group row">
 												 <label class="col-10"><?php echo e(__('adminMessage.is_offer_menu')); ?> <a href="javascript:;" data-toggle="kt-popover" data-trigger="focus" title="<?php echo e(__('adminMessage.note')); ?>" data-html="true" data-content="<?php echo e(__('adminMessage.is_offer_menu_note')); ?>"><?php echo trans('svgicon.help'); ?></a></label>
@@ -165,8 +165,8 @@ $theme    = $settings->theme;
 													</div>
                                                    </div>
                                                 </div>
-                                                
-                                                   
+
+
                                             <div class="form-group">
                                                 <div class="input-group row">
 												 <label class="col-10"><?php echo e(__('adminMessage.is_cart_popup')); ?> <a href="javascript:;" data-toggle="kt-popover" data-trigger="focus" title="<?php echo e(__('adminMessage.note')); ?>" data-html="true" data-content="<?php echo e(__('adminMessage.is_cart_popup_note')); ?>"><?php echo trans('svgicon.help'); ?></a></label>
@@ -178,8 +178,8 @@ $theme    = $settings->theme;
 													</div>
                                                    </div>
                                                 </div>
-                                                
-                                                
+
+
                                               <div class="form-group">
                                                 <div class="input-group row">
 												 <label class="col-10"><?php echo e(__('adminMessage.is_float_whatsapp')); ?> <a href="javascript:;" data-toggle="kt-popover" data-trigger="focus" title="<?php echo e(__('adminMessage.note')); ?>" data-html="true" data-content="<?php echo e(__('adminMessage.is_float_whatsapp_note')); ?>"><?php echo trans('svgicon.help'); ?></a></label>
@@ -683,7 +683,7 @@ $theme    = $settings->theme;
 																							 <?php if($errors->has('instagram_clientId')): ?>
 																							 <div class="invalid-feedback"><?php echo e($errors->first('instagram_clientId')); ?></div>
 																							 <?php endif; ?>
-											 
+
 																							 </div>
 																							 <div class="form-group ">
 
@@ -791,7 +791,15 @@ $theme    = $settings->theme;
                                                 <?php endif; ?>
 												</div>
                                                 </div>
-
+												<div class="form-group ">
+													<div class="input-group">
+														<div class="input-group-prepend"><span class="input-group-text" style="width:300px;"><?php echo e("Zarin Merchant Id"); ?></span></div>
+														<input type="text" class="form-control <?php if($errors->has('zarin_merchant_id')): ?> is-invalid <?php endif; ?>" name="zarin_merchant_id" value="<?php if($settingDetails->zarin_merchant_id): ?><?php echo e($settingDetails->zarin_merchant_id); ?><?php endif; ?>">
+														<?php if($errors->has('zarin_merchant_id')): ?>
+															<div class="invalid-feedback"><?php echo e($errors->first('zarin_merchant_id')); ?></div>
+														<?php endif; ?>
+													</div>
+												</div>
 												<div class="form-group ">
 												<div class="input-group">
 												<div class="input-group-prepend"><span class="input-group-text" style="width:300px;"><?php echo e(__('adminMessage.item_per_page_front')); ?></span></div>
@@ -808,6 +816,15 @@ $theme    = $settings->theme;
 												<input type="number" class="form-control <?php if($errors->has('item_per_page_back')): ?> is-invalid <?php endif; ?>" name="item_per_page_back" value="<?php if($settingDetails->item_per_page_back): ?><?php echo e($settingDetails->item_per_page_back); ?><?php endif; ?>">
                                                 <?php if($errors->has('item_per_page_back')): ?>
                                                 <div class="invalid-feedback"><?php echo e($errors->first('item_per_page_back')); ?></div>
+                                                <?php endif; ?>
+												</div>
+                                                </div>
+                                                <div class="form-group ">
+												<div class="input-group">
+												<div class="input-group-prepend"><span class="input-group-text" style="width:300px;"><?php echo e("Post Price"); ?></span></div>
+												<input type="number" class="form-control <?php if($errors->has('post_price')): ?> is-invalid <?php endif; ?>" name="post_price" value="<?php if($settingDetails->post_price): ?><?php echo e($settingDetails->post_price); ?><?php endif; ?>">
+                                                <?php if($errors->has('post_price')): ?>
+                                                <div class="invalid-feedback"><?php echo e($errors->first('post_price')); ?></div>
                                                 <?php endif; ?>
 												</div>
                                                 </div>
@@ -1133,7 +1150,7 @@ $theme    = $settings->theme;
                                                 </div>
                                                 </div>
 												</div>
-                                                
+
                                                 <!--top header note -->
                                                 <div class="form-group"><h4><?php echo e(__('adminMessage.order_note')); ?></h4></div>
                                                 <div class="form-group">

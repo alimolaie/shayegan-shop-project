@@ -20,9 +20,9 @@ class CreateCartsTable extends Migration
             $table->bigInteger('member_id')->unsigned()->index()->nullable();
             $table->foreign('member_id')->references('id')->on('members')->onDelete('cascade');
             $table->smallInteger('qty')->unsigned()->nullable();
-            $table->bigInteger('price')->unsigned()->nullable();
+            $table->bigInteger('retail_price')->unsigned()->nullable();
             $table->string('image')->nullable();
-            $table->string('product_name')->nullable();
+            $table->string('title_ar')->nullable();
             $table->timestamps();
         });
     }

@@ -862,3 +862,8 @@ Route::get('test-product','ProductTestController@index');
 
 //members routes
 Route::get('users/my-account','MemberController@memberDashboard');
+Route::post('users/add-to-cart/{id}','MemberController@addToCart');
+Route::get('users/my-cart',function (){
+    return view('front.member_panel.carts');
+});
+Route::get('users/check-out','MemberController@checkoutForm');

@@ -51,12 +51,14 @@ class AdminSettingsController extends Controller
 			'email' => 'required|email|min:3|max:150|string',
 			'mobile' => 'nullable|string|max:192',
 			'phone' => 'nullable|string|max:192',
+			'zarin_merchant_id' => 'nullable|string|max:192',
 			'logo' => 'mimes:jpeg,png,jpg,gif,svg|max:2048',
 			'emaillogo' => 'mimes:jpeg,png,jpg,gif,svg|max:2048',
 			'favicon' => 'mimes:jpg,jpeg,gif,png,ico,x-icon|max:2048',
 			'header_image' => 'mimes:jpg,jpeg,gif,png|max:2048',
 			'item_per_page_front' => 'numeric',
 			'item_per_page_back' => 'numeric',
+			'post_price' => 'numeric',
 			'bestseller_items' => 'numeric',
 			'featured_items' => 'numeric',
 			'latest_items' => 'numeric',
@@ -225,6 +227,8 @@ class AdminSettingsController extends Controller
 		}
 		$setting->office_hours_en=$request->input('office_hours_en');
 		$setting->office_hours_ar=$request->input('office_hours_ar');
+		$setting->post_price=$request->input('post_price');
+		$setting->zarin_merchant_id=$request->input('zarin_merchant_id');
 
 		$setting->name_en = $request->input('name_en');
 		$setting->name_ar = $request->input('name_ar');

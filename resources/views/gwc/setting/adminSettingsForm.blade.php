@@ -114,8 +114,8 @@ $theme    = $settings->theme;
 													</div>
                                                    </div>
                                                 </div>
-                                                
-                                                
+
+
                                             <div class="form-group">
                                                 <div class="input-group row">
 												 <label class="col-10">{{__('adminMessage.is_show_tags')}} <a href="javascript:;" data-toggle="kt-popover" data-trigger="focus" title="{{__('adminMessage.note')}}" data-html="true" data-content="{{__('adminMessage.is_show_tags_note')}}">{!!trans('svgicon.help')!!}</a></label>
@@ -139,8 +139,8 @@ $theme    = $settings->theme;
 													</div>
                                                    </div>
                                                 </div>
-                                                
-                                                
+
+
                                             <div class="form-group">
                                                 <div class="input-group row">
 												 <label class="col-10">{{__('adminMessage.is_more_menu')}} <a href="javascript:;" data-toggle="kt-popover" data-trigger="focus" title="{{__('adminMessage.note')}}" data-html="true" data-content="{{__('adminMessage.is_more_menu_note')}}">{!!trans('svgicon.help')!!}</a></label>
@@ -152,7 +152,7 @@ $theme    = $settings->theme;
 													</div>
                                                    </div>
                                                 </div>
-                                                
+
                                              <div class="form-group">
                                                 <div class="input-group row">
 												 <label class="col-10">{{__('adminMessage.is_offer_menu')}} <a href="javascript:;" data-toggle="kt-popover" data-trigger="focus" title="{{__('adminMessage.note')}}" data-html="true" data-content="{{__('adminMessage.is_offer_menu_note')}}">{!!trans('svgicon.help')!!}</a></label>
@@ -164,8 +164,8 @@ $theme    = $settings->theme;
 													</div>
                                                    </div>
                                                 </div>
-                                                
-                                                   
+
+
                                             <div class="form-group">
                                                 <div class="input-group row">
 												 <label class="col-10">{{__('adminMessage.is_cart_popup')}} <a href="javascript:;" data-toggle="kt-popover" data-trigger="focus" title="{{__('adminMessage.note')}}" data-html="true" data-content="{{__('adminMessage.is_cart_popup_note')}}">{!!trans('svgicon.help')!!}</a></label>
@@ -177,8 +177,8 @@ $theme    = $settings->theme;
 													</div>
                                                    </div>
                                                 </div>
-                                                
-                                                
+
+
                                               <div class="form-group">
                                                 <div class="input-group row">
 												 <label class="col-10">{{__('adminMessage.is_float_whatsapp')}} <a href="javascript:;" data-toggle="kt-popover" data-trigger="focus" title="{{__('adminMessage.note')}}" data-html="true" data-content="{{__('adminMessage.is_float_whatsapp_note')}}">{!!trans('svgicon.help')!!}</a></label>
@@ -682,7 +682,7 @@ $theme    = $settings->theme;
 																							 @if($errors->has('instagram_clientId'))
 																							 <div class="invalid-feedback">{{$errors->first('instagram_clientId')}}</div>
 																							 @endif
-											 
+
 																							 </div>
 																							 <div class="form-group ">
 
@@ -789,7 +789,15 @@ $theme    = $settings->theme;
                                                 @endif
 												</div>
                                                 </div>
-
+												<div class="form-group ">
+													<div class="input-group">
+														<div class="input-group-prepend"><span class="input-group-text" style="width:300px;">{{"Zarin Merchant Id"}}</span></div>
+														<input type="text" class="form-control @if($errors->has('zarin_merchant_id')) is-invalid @endif" name="zarin_merchant_id" value="@if($settingDetails->zarin_merchant_id){{$settingDetails->zarin_merchant_id}}@endif">
+														@if($errors->has('zarin_merchant_id'))
+															<div class="invalid-feedback">{{ $errors->first('zarin_merchant_id') }}</div>
+														@endif
+													</div>
+												</div>
 												<div class="form-group ">
 												<div class="input-group">
 												<div class="input-group-prepend"><span class="input-group-text" style="width:300px;">{{__('adminMessage.item_per_page_front')}}</span></div>
@@ -806,6 +814,15 @@ $theme    = $settings->theme;
 												<input type="number" class="form-control @if($errors->has('item_per_page_back')) is-invalid @endif" name="item_per_page_back" value="@if($settingDetails->item_per_page_back){{$settingDetails->item_per_page_back}}@endif">
                                                 @if($errors->has('item_per_page_back'))
                                                 <div class="invalid-feedback">{{ $errors->first('item_per_page_back') }}</div>
+                                                @endif
+												</div>
+                                                </div>
+                                                <div class="form-group ">
+												<div class="input-group">
+												<div class="input-group-prepend"><span class="input-group-text" style="width:300px;">{{"Post Price"}}</span></div>
+												<input type="number" class="form-control @if($errors->has('post_price')) is-invalid @endif" name="post_price" value="@if($settingDetails->post_price){{$settingDetails->post_price}}@endif">
+                                                @if($errors->has('post_price'))
+                                                <div class="invalid-feedback">{{ $errors->first('post_price') }}</div>
                                                 @endif
 												</div>
                                                 </div>
@@ -1131,7 +1148,7 @@ $theme    = $settings->theme;
                                                 </div>
                                                 </div>
 												</div>
-                                                
+
                                                 <!--top header note -->
                                                 <div class="form-group"><h4>{{__('adminMessage.order_note')}}</h4></div>
                                                 <div class="form-group">

@@ -69,71 +69,82 @@ use Illuminate\Support\Facades\Auth;
                     <i class="w-icon-heart"></i>
                     <span class="wishlist-label d-lg-show">علاقه مندیها </span>
                 </a>
+                <?php
+                $total=0;
+                ?>
 
 
 
 
-                <div class="dropdown cart-dropdown mr-0 mr-lg-2">
-                    <div class="cart-overlay"></div>
-                    <a href="#" class="cart-toggle label-down link">
-                        <i class="w-icon-cart">
-                            <span class="cart-count">2</span>
-                        </i>
-                        <span class="cart-label">سبد </span>
-                    </a>
-                    <div class="dropdown-box">
-                        <div class="products">
-                            <div class="product product-cart">
-                                <div class="product-detail">
-                                    <a href="product-default.html" class="product-name">الیس بافتنی بژ<br>کفش دونده تیک</a>
-                                    <div class="price-box">
-                                        <span class="product-quantity">1</span>
-                                        <span class="product-price">25600 تومان</span>
+                <?php if(session('cart')): ?>
+                    <div class="dropdown cart-dropdown mr-0 mr-lg-2">
+                        <div class="cart-overlay"></div>
+                        <a href="#" class="cart-toggle label-down link">
+                            <i class="w-icon-cart">
+                                <span class="cart-count"><?php echo e(array_sum(array_column(session('cart'), 'qty'))); ?></span>
+                            </i>
+                            <span class="cart-label">سبد </span>
+                        </a>
+                        <div class="dropdown-box">
+                            <div class="products">
+                                <?php $__currentLoopData = session('cart'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $id => $details): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                                <div class="product product-cart" id="cart-<?php echo e($id); ?>">
+                                    <div class="product-detail">
+                                        <a href="<?php echo e(url('product/'.$id)); ?>" class="product-name"><?php echo e($details['title_ar']); ?></a>
+                                        <div class="price-box">
+                                            <span class="product-quantity"><?php echo e($details['qty']); ?></span>
+                                            <span class="product-price"><?php echo e(number_format($details['retail_price'])); ?>  تومان</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <figure class="product-media">
-                                    <a href="product-default.html">
-                                        <img src="website_assets/assets/images/cart/product-1.jpg" alt="product" height="84"
-                                             width="94" />
-                                    </a>
-                                </figure>
-                                <button class="btn btn-link btn-close" aria-label="button">
-                                    <i class="fas fa-times"></i>
-                                </button>
+                                    <figure class="product-media">
+                                        <a href="<?php echo e(url('product/'.$id)); ?>">
+                                            <img src="<?php echo e(asset('uploads/product/original/'.$details['image'])); ?>" alt="product" height="84"
+                                                 width="94" />
+                                        </a>
+                                    </figure>
+                                    <button class="btn btn-link btn-close" aria-label="button">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div >
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </div>
+                                <?php
 
-                            <div class="product product-cart">
-                                <div class="product-detail">
-                                    <a href="product-default.html" class="product-name">پینا کاربردی آبی<br>لباس جین جلویی پینا</a>
-                                    <div class="price-box">
-                                        <span class="product-quantity">1</span>
-                                        <span class="product-price">32000 تومان</span>
-                                    </div>
+                                $total += $details['retail_price'] * $details['qty'];
+                                ?>
+
+
+                            <div class="cart-total">
+                                <label>مجموع: </label>
+                                <span class="price"><?php echo e(number_format($total)); ?> تومان</span>
+                            </div>
+<?php
+    $a=0;
+    $a+=$total;
+ ?>
+                            <?php if(session()->has('errors')): ?>
+                                <div class="alert alert-danger animated fadeIn text-center">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <strong>
+                                        <?php echo session('cart')->get('errors'); ?>
+
+                                    </strong>
                                 </div>
-                                <figure class="product-media">
-                                    <a href="product-default.html">
-                                        <img src="website_assets/assets/images/cart/product-2.jpg" alt="product" width="84"
-                                             height="94" />
-                                    </a>
-                                </figure>
-                                <button class="btn btn-link btn-close" aria-label="button">
-                                    <i class="fas fa-times"></i>
-                                </button>
+                            <?php endif; ?>
+                            <div class="cart-action">
+                                <a href="<?php echo e(url('users/my-cart')); ?>" class="btn btn-dark btn-outline btn-rounded">سبد خرید </a>
+                                <a href="checkout.html" class="btn btn-primary  btn-rounded">پرداخت </a>
                             </div>
                         </div>
-
-                        <div class="cart-total">
-                            <label>مجموع: </label>
-                            <span class="price">58000 تومان</span>
-                        </div>
-
-                        <div class="cart-action">
-                            <a href="cart.html" class="btn btn-dark btn-outline btn-rounded">سبد خرید </a>
-                            <a href="checkout.html" class="btn btn-primary  btn-rounded">پرداخت </a>
-                        </div>
+                        <!-- End of Dropdown Box -->
                     </div>
-                    <!-- End of Dropdown Box -->
-                </div>
+
+                <?php endif; ?>
+
+
             </div>
         </div>
     </div>
