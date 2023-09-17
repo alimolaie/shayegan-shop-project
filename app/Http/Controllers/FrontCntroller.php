@@ -20,6 +20,10 @@ class FrontCntroller extends Controller
         $Popular_products=Product::where('is_active',1)->inRandomOrder()->take(5)->get();
         return view('front.website.index',compact('categories','slideShows','offerProduct','Popular_products','banners'));
     }
+    function adminLogin()
+    {
+        return view('admin');
+    }
 
     public function productDetails($id)
     {

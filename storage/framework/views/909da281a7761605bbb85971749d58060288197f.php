@@ -55,6 +55,7 @@
     <!-- Default CSS -->
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('website_assets/assets/css/demo2.min.css')); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('website_assets/assets/css/style-rtl.min.css')); ?>">
+    <?php echo $__env->yieldContent('style'); ?>
 </head>
 
 <body class="home">

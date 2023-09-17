@@ -9,7 +9,7 @@ class Area extends Model
     use Notifiable;
 	
 	
-	public $table = "gwc_country";
+	public $table = "cities";
 	
 	
 }

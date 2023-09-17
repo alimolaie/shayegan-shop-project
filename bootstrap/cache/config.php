@@ -814,7 +814,7 @@
   'session' => 
   array (
     'driver' => 'file',
-    'lifetime' => 120,
+    'lifetime' => 43200,
     'expire_on_close' => false,
     'encrypt' => false,
     'files' => 'E:\\shayegan_project\\shop\\storage\\framework/sessions',

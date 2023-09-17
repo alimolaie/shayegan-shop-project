@@ -54,6 +54,7 @@
     <!-- Default CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('website_assets/assets/css/demo2.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('website_assets/assets/css/style-rtl.min.css')}}">
+    @yield('style')
 </head>
 
 <body class="home">

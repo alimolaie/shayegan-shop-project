@@ -135,7 +135,7 @@ use Illuminate\Support\Facades\Auth;
                             @endif
                             <div class="cart-action">
                                 <a href="{{url('users/my-cart')}}" class="btn btn-dark btn-outline btn-rounded">سبد خرید </a>
-                                <a href="checkout.html" class="btn btn-primary  btn-rounded">پرداخت </a>
+                                <a href="{{url('users/check-out')}}" class="btn btn-primary  btn-rounded">پرداخت </a>
                             </div>
                         </div>
                         <!-- End of Dropdown Box -->

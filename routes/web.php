@@ -1,12 +1,9 @@
 <?php
 
-
-
+Route::get('/','FrontCntroller@index')->name('home');
+Route::get('/admin/login','FrontCntroller@adminLogin');
 Auth::routes();
-Route::get('/admin/login',function ()
-{
-    return view('admin');
-});
+
 Route::get('/users/login',function ()
 {
     return view('front.website.login');
@@ -428,7 +425,6 @@ Route::group(['middleware' => ['admin']], function() {
     return redirect()->back();
     });
 	
-	Route::get('/','FrontCntroller@index')->name('home');
 	Route::post('/subscribe_newsletter','webController@subscribe_newsletter');
 	Route::get('/contactus','webController@viewcontact');
 	Route::post('/contactform','webController@contactform')->name('contactform');
@@ -867,3 +863,5 @@ Route::get('users/my-cart',function (){
     return view('front.member_panel.carts');
 });
 Route::get('users/check-out','MemberController@checkoutForm');
+Route::post('users/submit-order','MemberController@submitOrder');
+
